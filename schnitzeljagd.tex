@@ -1,0 +1,63 @@
+\documentclass{article}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath, amssymb, amsthm, mathtools}
+
+% === extra Macro ===
+\newcommand{\ggT}{\operatorname{ggT}}
+
+% === Kajetan's Macros ===
+\newcommand{\fa}{\qquad \forall \quad}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\im}{{\rm Im}\,}
+\newcommand{\re}{{\rm Re}\,}
+\newcommand{\grad}{{\mathrm{grad}}}
+\newcommand{\esubset}{{\subset \atop \not=}}
+
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\bea}{\begin{eqnarray}}
+\newcommand{\eea}{\end{eqnarray}}
+\newcommand{\beao}{\begin{eqnarray*}}
+\newcommand{\eeao}{\end{eqnarray*}}
+\newcommand{\nn}{\nonumber}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ol}{\overline}
+\newcommand{\ul}{\underline}
+\newcommand{\fn}{\mathbf{0}}
+
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\bP}{\mathbb{P}}
+
+\newcommand{\rkl}{\rangle}
+\newcommand{\lkl}{\langle}
+\newcommand{\etm}{\subsetneq}
+
+\begin{document}
+Opa Wichtel hat noch eine Amateurfunk Station und schnappt einen verschlüsselten Funkspruch auf. Die Übertragung könnte interessant sein. Opa Wichtel hat die Zahlen $212919$ notiert.
+
+Ihr vermutet, dass die Nachricht an den Grinch addressiert ist. Sein öffentlicher Schlüssel ist bekannt und lautet $(e, N) := (5, 3 548 669)$.
+
+Tipps:
+\begin{itemize}
+    \item Grinch hat den Verschlüsselungsexponenten 5 (und nicht 3) gewählt, weil 5 seine Lieblingszahl ist. (Und nicht etwa, weil Aaron erst um 2 in der Nacht gemerkt hat dass $3$ und $\varphi(N)$ nicht teilerfremd sind)
+    \item Wolfram Alpha faktorisiert diese Zahl immer noch instant
+    \item Wenn du andere Tipps geben willst: Es wird vermutet das Grinch ein Fan der Amerikanischen Unabhängigkeit ist. Daraus könnte man folgern: eine Primzahl ist 1777, es ist nämlich die nächste Primzahl zu 1776.
+    \item Die andere Primzahl ist 1997. Damit kann man vielleicht auch was tipsen.
+    \item Es gibt Online-Rechner, um modulare inverse zu berechnen.
+\end{itemize}
+Lösung:
+\begin{itemize}
+    \item $\phi(N) = (p-1)(q-1) = 3544896$
+    \item Modulares Inverses von $5$ mod $\varphi(N)$ ist $2835917$
+    \item $212919^{2835917} \equiv 3224624 \pmod N$ 
+    \item \texttt{212919**2835917 \% 3548669} dauert schon ein bisschen in Python hihi
+    \item In binär $01100010 0110100 00110000_2$
+    \item oder die Buchstaben 1, 4, 0
+\end{itemize}
+\end{document}
+
